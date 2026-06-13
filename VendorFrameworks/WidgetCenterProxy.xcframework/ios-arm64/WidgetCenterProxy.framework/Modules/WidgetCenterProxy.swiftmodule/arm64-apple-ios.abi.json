@@ -1,0 +1,707 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "WidgetCenterProxy",
+    "printedName": "WidgetCenterProxy",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "WidgetCenterProxy",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WidgetKit",
+        "printedName": "WidgetKit",
+        "declKind": "Import",
+        "moduleName": "WidgetCenterProxy"
+      },
+      {
+        "kind": "Import",
+        "name": "Intents",
+        "printedName": "Intents",
+        "declKind": "Import",
+        "moduleName": "WidgetCenterProxy"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WidgetInfoProxy",
+        "printedName": "WidgetInfoProxy",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "kind",
+            "printedName": "kind",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(py)kind",
+            "mangledName": "$s17WidgetCenterProxy0a4InfoC0C4kindSSvp",
+            "moduleName": "WidgetCenterProxy",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)kind",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C4kindSSvg",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)setKind:",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C4kindSSvs",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17WidgetCenterProxy0a4InfoC0C4kindSSvM",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C4kindSSvM",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "family",
+            "printedName": "family",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(py)family",
+            "mangledName": "$s17WidgetCenterProxy0a4InfoC0C6familySivp",
+            "moduleName": "WidgetCenterProxy",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)family",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C6familySivg",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)setFamily:",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C6familySivs",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17WidgetCenterProxy0a4InfoC0C6familySivM",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C6familySivM",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "configuration",
+            "printedName": "configuration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Intents.INIntent?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "INIntent",
+                    "printedName": "Intents.INIntent",
+                    "usr": "c:objc(cs)INIntent"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(py)configuration",
+            "mangledName": "$s17WidgetCenterProxy0a4InfoC0C13configurationSo8INIntentCSgvp",
+            "moduleName": "WidgetCenterProxy",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Intents.INIntent?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "INIntent",
+                        "printedName": "Intents.INIntent",
+                        "usr": "c:objc(cs)INIntent"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)configuration",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C13configurationSo8INIntentCSgvg",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Intents.INIntent?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "INIntent",
+                        "printedName": "Intents.INIntent",
+                        "usr": "c:objc(cs)INIntent"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)setConfiguration:",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C13configurationSo8INIntentCSgvs",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17WidgetCenterProxy0a4InfoC0C13configurationSo8INIntentCSgvM",
+                "mangledName": "$s17WidgetCenterProxy0a4InfoC0C13configurationSo8INIntentCSgvM",
+                "moduleName": "WidgetCenterProxy",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WidgetInfoProxy",
+                "printedName": "WidgetCenterProxy.WidgetInfoProxy",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy(im)init",
+            "mangledName": "$s17WidgetCenterProxy0a4InfoC0CACycfc",
+            "moduleName": "WidgetCenterProxy",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy",
+        "mangledName": "$s17WidgetCenterProxy0a4InfoC0C",
+        "moduleName": "WidgetCenterProxy",
+        "intro_iOS": "14.0",
+        "objc_name": "WidgetInfoProxy",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "Available"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "WidgetCenterProxy",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WidgetKit",
+        "printedName": "WidgetKit",
+        "declKind": "Import",
+        "moduleName": "WidgetCenterProxy"
+      },
+      {
+        "kind": "Import",
+        "name": "Intents",
+        "printedName": "Intents",
+        "declKind": "Import",
+        "moduleName": "WidgetCenterProxy"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WidgetCenterProxy",
+        "printedName": "WidgetCenterProxy",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "reloadTimeLines",
+            "printedName": "reloadTimeLines(ofKind:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetCenterProxy(im)reloadTimeLinesOfKind:",
+            "mangledName": "$s17WidgetCenterProxyAAC15reloadTimeLines6ofKindySS_tF",
+            "moduleName": "WidgetCenterProxy",
+            "objc_name": "reloadTimeLinesOfKind:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "reloadAllTimeLines",
+            "printedName": "reloadAllTimeLines()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetCenterProxy(im)reloadAllTimeLines",
+            "mangledName": "$s17WidgetCenterProxyAAC18reloadAllTimeLinesyyF",
+            "moduleName": "WidgetCenterProxy",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getCurrentConfigurations",
+            "printedName": "getCurrentConfigurations(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "([WidgetCenterProxy.WidgetInfoProxy]) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[WidgetCenterProxy.WidgetInfoProxy]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "WidgetInfoProxy",
+                        "printedName": "WidgetCenterProxy.WidgetInfoProxy",
+                        "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetInfoProxy"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetCenterProxy(im)getCurrentConfigurationsWithCompletion:",
+            "mangledName": "$s17WidgetCenterProxyAAC24getCurrentConfigurations10completionyySayAA0a4InfoC0CGc_tF",
+            "moduleName": "WidgetCenterProxy",
+            "objc_name": "getCurrentConfigurationsWithCompletion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WidgetCenterProxy",
+                "printedName": "WidgetCenterProxy.WidgetCenterProxy",
+                "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetCenterProxy"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetCenterProxy(im)init",
+            "mangledName": "$s17WidgetCenterProxyAACABycfc",
+            "moduleName": "WidgetCenterProxy",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@WidgetCenterProxy@objc(cs)WidgetCenterProxy",
+        "mangledName": "$s17WidgetCenterProxyAAC",
+        "moduleName": "WidgetCenterProxy",
+        "intro_iOS": "14.0",
+        "objc_name": "WidgetCenterProxy",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "Available"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/mmuegel\/Git\/Main2\/Modules\/WidgetCenterProxy\/WidgetCenterProxy\/WidgetCenterProxy\/WidgetInfoProxy.swift",
+      "kind": "StringLiteral",
+      "offset": 279,
+      "length": 2,
+      "value": "\"\""
+    }
+  ]
+}

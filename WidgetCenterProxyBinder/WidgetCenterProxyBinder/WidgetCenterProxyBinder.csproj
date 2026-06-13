@@ -19,7 +19,7 @@
     <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="../../VendorFrameworks/swift-framework-proxy/WidgetCenterProxy.framework">
+    <NativeReference Include="../../VendorFrameworks/WidgetCenterProxy.xcframework">
       <Kind>Framework</Kind>
       <Frameworks>Foundation WidgetKit Intents</Frameworks>
     </NativeReference>
