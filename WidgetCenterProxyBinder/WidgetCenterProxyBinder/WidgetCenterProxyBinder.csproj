@@ -21,7 +21,7 @@
   <ItemGroup>
     <NativeReference Include="../../VendorFrameworks/WidgetCenterProxy.xcframework">
       <Kind>Framework</Kind>
-      <Frameworks>Foundation WidgetKit Intents</Frameworks>
+      <Frameworks>Foundation WidgetKit Intents StoreKit</Frameworks>
     </NativeReference>
   </ItemGroup>
 </Project>

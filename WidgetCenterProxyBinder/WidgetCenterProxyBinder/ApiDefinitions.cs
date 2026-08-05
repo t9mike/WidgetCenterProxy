@@ -40,4 +40,14 @@ namespace Binding
 		[NullAllowed, Export ("configuration", ArgumentSemantic.Strong)]
 		INIntent Configuration { get; set; }
 	}
+
+	// @interface StoreKitPurchaseHistoryProxy : NSObject
+	[iOS (16,0)]
+	[BaseType (typeof(NSObject))]
+	interface StoreKitPurchaseHistoryProxy
+	{
+		// -(void)fetchPurchaseHistoryWithCompletion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable))completion;
+		[Export ("fetchPurchaseHistoryWithCompletion:")]
+		void FetchPurchaseHistory (Action<NSString, NSString> completion);
+	}
 }

@@ -1,9 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
-// swift-module-flags: -target arm64-apple-ios12.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name WidgetCenterProxy
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+// swift-compiler-version: Apple Swift version 6.2.4 effective-5.10 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-module-flags: -target arm64-apple-ios12.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name WidgetCenterProxy
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
 import Foundation
 import Intents
+import StoreKit
 import Swift
 @_exported import WidgetCenterProxy
 import WidgetKit
@@ -23,6 +24,14 @@ import _SwiftConcurrencyShims
   @objc public func reloadTimeLines(ofKind: Swift.String)
   @objc public func reloadAllTimeLines()
   @objc public func getCurrentConfigurations(completion: @escaping ([WidgetCenterProxy.WidgetInfoProxy]) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOS 16.0, *)
+@objc(StoreKitPurchaseHistoryProxy) final public class StoreKitPurchaseHistoryProxy : ObjectiveC.NSObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc final public func fetchPurchaseHistory(completion: @escaping (Swift.String?, Swift.String?) -> Swift.Void)
+  #endif
   @objc override dynamic public init()
   @objc deinit
 }

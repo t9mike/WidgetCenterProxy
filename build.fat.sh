@@ -1,37 +1,56 @@
-# Builds a fat library for a given xcode project (framework)
+#!/bin/bash
 
-echo "Define parameters"
-IOS_SDK_VERSION="14.4"
-SWIFT_PROJECT_NAME="WidgetCenterProxy"
-SWIFT_PROJECT_PATH="$SWIFT_PROJECT_NAME/$SWIFT_PROJECT_NAME.xcodeproj"
-SWIFT_BUILD_PATH="$SWIFT_PROJECT_NAME/build"
-SWIFT_OUTPUT_PATH="VendorFrameworks/swift-framework-proxy"
+# Build the Swift framework for physical iOS devices and both simulator
+# architectures. The historical filename is retained because existing notes
+# and developer workflows refer to it, but the output is a modern XCFramework.
 
-echo "Build iOS framework for simulator(x86_64 only) and device"
-rm -Rf "$SWIFT_BUILD_PATH"
-xcodebuild -sdk iphonesimulator$IOS_SDK_VERSION -project "$SWIFT_PROJECT_PATH" -configuration Release -arch x86_64
-xcodebuild -sdk iphoneos$IOS_SDK_VERSION -project "$SWIFT_PROJECT_PATH" -configuration Release
+set -euo pipefail
 
-echo "Create fat binaries for Release-iphoneos and Release-iphonesimulator configuration"
-echo "Copy one build as a fat framework"
-cp -R "$SWIFT_BUILD_PATH/Release-iphoneos" "$SWIFT_BUILD_PATH/Release-fat"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_NAME="WidgetCenterProxy"
+PROJECT_PATH="$SCRIPT_DIR/$PROJECT_NAME/$PROJECT_NAME.xcodeproj"
+OUTPUT_PATH="$SCRIPT_DIR/VendorFrameworks/$PROJECT_NAME.xcframework"
+BUILD_ROOT="$(mktemp -d /tmp/WidgetCenterProxy.XXXXXX)"
+DEVICE_ARCHIVE="$BUILD_ROOT/WidgetCenterProxy-iOS.xcarchive"
+SIMULATOR_ARCHIVE="$BUILD_ROOT/WidgetCenterProxy-Simulator.xcarchive"
+STAGED_OUTPUT="$BUILD_ROOT/$PROJECT_NAME.xcframework"
 
-echo "Combine modules from another build with the fat framework modules"
-cp -R "$SWIFT_BUILD_PATH/Release-iphonesimulator/$SWIFT_PROJECT_NAME.framework/Modules/$SWIFT_PROJECT_NAME.swiftmodule/" "$SWIFT_BUILD_PATH/Release-fat/$SWIFT_PROJECT_NAME.framework/Modules/$SWIFT_PROJECT_NAME.swiftmodule/"
+cleanup() {
+    rm -rf "$BUILD_ROOT"
+}
+trap cleanup EXIT
 
-echo "Combine iphoneos + iphonesimulator configuration as fat libraries"
-lipo -create -output "$SWIFT_BUILD_PATH/Release-fat/$SWIFT_PROJECT_NAME.framework/$SWIFT_PROJECT_NAME" "$SWIFT_BUILD_PATH/Release-iphoneos/$SWIFT_PROJECT_NAME.framework/$SWIFT_PROJECT_NAME" "$SWIFT_BUILD_PATH/Release-iphonesimulator/$SWIFT_PROJECT_NAME.framework/$SWIFT_PROJECT_NAME"
+echo "Building $PROJECT_NAME for iOS devices"
+xcodebuild archive \
+    -project "$PROJECT_PATH" \
+    -scheme "$PROJECT_NAME" \
+    -configuration Release \
+    -destination 'generic/platform=iOS' \
+    -archivePath "$DEVICE_ARCHIVE" \
+    SKIP_INSTALL=NO \
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    CODE_SIGNING_ALLOWED=NO
 
-echo "Verify results"
-lipo -info "$SWIFT_BUILD_PATH/Release-fat/$SWIFT_PROJECT_NAME.framework/$SWIFT_PROJECT_NAME"
+echo "Building $PROJECT_NAME for iOS Simulator"
+xcodebuild archive \
+    -project "$PROJECT_PATH" \
+    -scheme "$PROJECT_NAME" \
+    -configuration Release \
+    -destination 'generic/platform=iOS Simulator' \
+    -archivePath "$SIMULATOR_ARCHIVE" \
+    SKIP_INSTALL=NO \
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    CODE_SIGNING_ALLOWED=NO
 
-echo "Copy fat frameworks to the output folder"
-rm -Rf "$SWIFT_OUTPUT_PATH"
-mkdir -p "$SWIFT_OUTPUT_PATH"
-cp -Rf "$SWIFT_BUILD_PATH/Release-fat/$SWIFT_PROJECT_NAME.framework" "$SWIFT_OUTPUT_PATH"
+echo "Creating $PROJECT_NAME.xcframework"
+xcodebuild -create-xcframework \
+    -framework "$DEVICE_ARCHIVE/Products/Library/Frameworks/$PROJECT_NAME.framework" \
+    -framework "$SIMULATOR_ARCHIVE/Products/Library/Frameworks/$PROJECT_NAME.framework" \
+    -output "$STAGED_OUTPUT"
 
-echo "Generating binding api definition and structs"
-sharpie bind --sdk=iphoneos$IOS_SDK_VERSION --output="$SWIFT_OUTPUT_PATH/XamarinApiDef" --namespace="Binding" --scope="$SWIFT_OUTPUT_PATH/$SWIFT_PROJECT_NAME.framework/Headers/" "$SWIFT_OUTPUT_PATH/$SWIFT_PROJECT_NAME.framework/Headers/$SWIFT_PROJECT_NAME-Swift.h"
+# Only replace the checked-in framework after both archives and XCFramework
+# creation have succeeded.
+rm -rf "$OUTPUT_PATH"
+mv "$STAGED_OUTPUT" "$OUTPUT_PATH"
 
-
-echo "Done!"
+echo "Updated $OUTPUT_PATH"
