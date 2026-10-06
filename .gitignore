@@ -1,3 +1,6 @@
 WidgetCenterProxyBinder/WidgetCenterProxyBinder/bin
 WidgetCenterProxyBinder/WidgetCenterProxyBinder/obj
 WidgetCenterProxy/build
+
+# Keep symbols alongside the vendored XCFramework slices.
+!VendorFrameworks/WidgetCenterProxy.xcframework/**/dSYMs/*.dSYM/

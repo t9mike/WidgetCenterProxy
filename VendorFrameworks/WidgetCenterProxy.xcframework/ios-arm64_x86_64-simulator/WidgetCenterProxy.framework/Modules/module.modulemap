@@ -7,5 +7,4 @@ framework module WidgetCenterProxy {
 
 module WidgetCenterProxy.Swift {
   header "WidgetCenterProxy-Swift.h"
-  requires objc
 }

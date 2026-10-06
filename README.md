@@ -16,7 +16,9 @@ Run `./build.fat.sh` from this directory. Despite its historical name, the
 script now creates a modern `WidgetCenterProxy.xcframework` containing an iOS
 device slice and an arm64/x86_64 iOS Simulator slice. It builds into a unique
 temporary directory and only replaces the checked-in framework after all
-native build steps succeed.
+native build steps succeed. Each slice includes its matching dSYM via
+`-debug-symbols`; keep those symbols with the binary for App Store archives.
+The build targets iOS 16, matching the StoreKit bridge and C# app.
 
 The framework is consumed by `WidgetCenterProxyBinder`. If a new Swift API is
 added, update `WidgetCenterProxyBinder/WidgetCenterProxyBinder/ApiDefinitions.cs`
