@@ -46,6 +46,10 @@ namespace Binding
 	[BaseType (typeof(NSObject))]
 	interface StoreKitPurchaseHistoryProxy
 	{
+		// -(void)fetchCurrentStorefrontCountryCodeWithCompletion:(void (^ _Nonnull)(NSString * _Nullable))completion;
+		[Export ("fetchCurrentStorefrontCountryCodeWithCompletion:")]
+		void FetchCurrentStorefrontCountryCode (Action<NSString> completion);
+
 		// -(void)fetchPurchaseHistoryWithCompletion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable))completion;
 		[Export ("fetchPurchaseHistoryWithCompletion:")]
 		void FetchPurchaseHistory (Action<NSString, NSString> completion);

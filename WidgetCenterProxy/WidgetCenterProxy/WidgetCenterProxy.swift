@@ -65,6 +65,20 @@ public class WidgetCenterProxy : NSObject {
 @available(iOS 16.0, *)
 @objc(StoreKitPurchaseHistoryProxy)
 public final class StoreKitPurchaseHistoryProxy: NSObject {
+    // Use the current App Store account region, not device locale, IP location,
+    // or the storefront recorded on an older purchase.
+    @objc
+    public func fetchCurrentStorefrontCountryCode(
+        completion: @escaping (String?) -> Void
+    ) {
+        Task {
+            let storefront = await Storefront.current
+            await MainActor.run {
+                completion(storefront?.countryCode)
+            }
+        }
+    }
+
     private struct Result: Codable {
         let schemaVersion: Int
         let fetchedAt: String

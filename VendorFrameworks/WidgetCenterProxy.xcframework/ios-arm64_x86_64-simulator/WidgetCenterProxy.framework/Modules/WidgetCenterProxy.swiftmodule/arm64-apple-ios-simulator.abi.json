@@ -706,6 +706,56 @@
         "children": [
           {
             "kind": "Function",
+            "name": "fetchCurrentStorefrontCountryCode",
+            "printedName": "fetchCurrentStorefrontCountryCode(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@WidgetCenterProxy@objc(cs)StoreKitPurchaseHistoryProxy(im)fetchCurrentStorefrontCountryCodeWithCompletion:",
+            "mangledName": "$s17WidgetCenterProxy023StoreKitPurchaseHistoryC0C33fetchCurrentStorefrontCountryCode10completionyySSSgc_tF",
+            "moduleName": "WidgetCenterProxy",
+            "objc_name": "fetchCurrentStorefrontCountryCodeWithCompletion:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "fetchPurchaseHistory",
             "printedName": "fetchPurchaseHistory(completion:)",
             "children": [

@@ -374,6 +374,7 @@ extern "C" {
 @class NSString;
 SWIFT_CLASS_NAMED("StoreKitPurchaseHistoryProxy") SWIFT_AVAILABILITY(ios,introduced=16.0)
 @interface StoreKitPurchaseHistoryProxy : NSObject
+- (void)fetchCurrentStorefrontCountryCodeWithCompletion:(void (^ _Nonnull)(NSString * _Nullable))completion;
 - (void)fetchPurchaseHistoryWithCompletion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -780,6 +781,7 @@ extern "C" {
 @class NSString;
 SWIFT_CLASS_NAMED("StoreKitPurchaseHistoryProxy") SWIFT_AVAILABILITY(ios,introduced=16.0)
 @interface StoreKitPurchaseHistoryProxy : NSObject
+- (void)fetchCurrentStorefrontCountryCodeWithCompletion:(void (^ _Nonnull)(NSString * _Nullable))completion;
 - (void)fetchPurchaseHistoryWithCompletion:(void (^ _Nonnull)(NSString * _Nullable, NSString * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

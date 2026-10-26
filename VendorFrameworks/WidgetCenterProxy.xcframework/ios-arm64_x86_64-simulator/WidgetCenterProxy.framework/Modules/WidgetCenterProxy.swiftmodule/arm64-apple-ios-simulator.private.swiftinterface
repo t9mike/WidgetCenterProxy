@@ -29,6 +29,7 @@ import _SwiftConcurrencyShims
 }
 @_inheritsConvenienceInitializers @available(iOS 16.0, *)
 @objc(StoreKitPurchaseHistoryProxy) final public class StoreKitPurchaseHistoryProxy : ObjectiveC::NSObject {
+  @objc final public func fetchCurrentStorefrontCountryCode(completion: @escaping (Swift::String?) -> Swift::Void)
   @objc final public func fetchPurchaseHistory(completion: @escaping (Swift::String?, Swift::String?) -> Swift::Void)
   @objc override dynamic public init()
   @objc deinit

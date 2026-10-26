@@ -6,6 +6,9 @@ C# app:
 - `WidgetCenter.shared` operations used by the iOS 14 widget integration.
 - StoreKit 2 verified transaction history used by Sundial Classic to record
   non-refunded purchases and prove offer eligibility to CloudflareServer.
+- The current StoreKit storefront country code used only to control Classic
+  offer presentation. This can be unavailable; the caller sends an empty code
+  and lets the server apply the configured regional presentation policy.
 
 It was originally based on the
 [binding-swift walkthrough](https://learn.microsoft.com/xamarin/ios/platform/binding-swift/walkthrough).
